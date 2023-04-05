@@ -4,10 +4,6 @@ function fish_prompt
 
     set -l last_status $status
 
-    if not set -q __fish_prompt_hostname
-        set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
-    end
-
     set -g __fish_git_prompt_show_informative_status true
     set -g __fish_git_prompt_showcolorhints true
 
@@ -38,7 +34,7 @@ function fish_prompt
     end
 
     # Top
-    echo -n $cyan$USER$normal at $green$__fish_prompt_hostname$normal in $green(prompt_pwd)$normal
+    echo -n $green(prompt_pwd)$normal
     __fish_git_prompt
 
     # Line break
